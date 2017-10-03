@@ -41,15 +41,39 @@ input[type="submit"]
 }
 </style>
 
-
 <h1>New Property Listing</h1>
 
 <form class="" action="/properties" method="post" enctype="multipart/form-data">
 
   <div>
-    <label for="address1">Enter property address:</label>
+    <label for="address1">Address line 1:</label>
     <input id="address1" type="text" name="address1" value="">
   </div>
+
+<div>
+  <label for="address2">Address line 2:</label>
+  <input type="text" id="address2" name="address2" value="" placeholder="">
+</div>
+
+<div>
+  <label for="address3">Address line 3:</label>
+  <input type="text" id="address3" name="address3" value="" placeholder="">
+</div>
+
+<div>
+  <label for="city">City:</label>
+  <input type="text" id="city" name="city" value="" placeholder="">
+</div>
+
+<div>
+  <label for="state">State/County:</label>
+  <input type="text" id="state" name="state" value="" placeholder="">
+</div>
+
+<div>
+  <label for="post_code">Post Code:</label>
+  <input type="text" id="post_code" name="post_code" value="" placeholder="">
+</div>
 
   <div>
     <label for="price">Price per day: (£)</label>
