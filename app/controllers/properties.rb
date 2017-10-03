@@ -22,7 +22,7 @@ class EarBnb < Sinatra::Base
     :post_code => params[:post_code],
     :price_per_night => params[:price],
     :bedrooms => params[:bedrooms],
-    :imgitage_url => @photo
+    :image_url => @photo
     )
     if @property.save
       current_user.save

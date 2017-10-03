@@ -18,7 +18,7 @@ class Property
   property :post_code,        String
   property :price_per_night,  Integer
   property :bedrooms,         String
-  property :imgitage_url,        String
+  property :image_url,        String
   property :created_at,       DateTime
 
   def format_time(time = @created_at)
