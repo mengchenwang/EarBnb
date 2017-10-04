@@ -1,39 +1,11 @@
-<style>
-  .top_box {
-      width:1500px;
-      border-radius:5px;
-      padding:10px;
-      margin: auto auto 50px auto;
-      display:block;
-      background-color:LightGray;
-      overflow:hidden;
-      text-align:center;
-    }
-
-  .top_left {
-    float:left;
-    display:inline-block;
-  }
-
-  .top_right {
-    float:right;
-    display:inline-block;
-  }
-
-  .top_center {
-    display:inline-block;
-    vertical-align:text-bottom;
-  }
-</style>
-
 <div class="top_box">
   <% if current_user %>
     <div class="top_left">
-      <img src="/imgs/earbnb/logo.png" width="100">
+      <img class="logo" src="/imgs/earbnb/logo.png" alt="earbnb logo">
     </div>
 
     <div class="top_center">
-      Welcome, <b><%= current_user.first_name %>&nbsp;<%= current_user.last_name %></b>
+      Welcome, <b><%= current_user.first_name %> <%= current_user.last_name %></b>
       <form method='post' action='/sessions'>
         <input type='hidden' name='_method' value='delete'>
         <input type='submit' value='Sign out'>
@@ -47,7 +19,7 @@
     </div>
   <% else %>
     <div class="top_left">
-      <img src="/imgs/earbnb/logo.png" width="100">
+      <img class="logo" src="/imgs/earbnb/logo.png" alt="earbnb logo">
     </div>
 
     <div class="top_center">

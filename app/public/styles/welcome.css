@@ -1,0 +1,40 @@
+.top_box{
+    background-color:LightGray;
+    border-radius:5px;
+    display:block;
+    margin: auto auto 50px auto;
+    overflow:hidden;
+    padding:10px;
+    text-align:center;
+    width:97%;
+}
+
+.logo{
+  width:100px;
+}
+
+.top_left {
+  float:left;
+}
+
+.top_right {
+  float:right;
+}
+
+.top_center {
+  display:inline-block;
+  vertical-align:text-bottom;
+}
+
+.top_box input[type="submit"]{
+  -moz-appearance:button;
+  -webkit-appearance:button;
+  border-radius:5px;
+  margin:10px auto;
+  padding:5px 10px;
+
+}
+.top_box input[type="submit"]:hover{
+  background:#333;
+  color:white;
+}
