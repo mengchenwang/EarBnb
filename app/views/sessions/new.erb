@@ -1,14 +1,18 @@
-<h1>Please sign in</h1>
+<form class="login" action='/sessions' method='post'>
+  <header>Please sign in</header>
 
-<form action='/sessions' method='post'>
-  <label for='email'>
-    Email: <input name='email' type='text'>
-  </label>
-  <br>
-  <label for='password'>
-    Password: <input name='password' type='password'>
-  </label>
-  <br>
-  <br>
-  <input type='submit' value='Sign in'>
+  <div class="input_group">
+    <label for='email'>Email : </label>
+    <input id="email" name='email' type='email'>
+  </div>
+
+  <div class="input_group">
+    <label for='password'>Password : </label>
+    <input id="password" name='password' type='password'>
+  </div>
+
+  <div class="input_group">
+    <input type='submit' value='Sign in'>
+  </div>
+
 </form>
