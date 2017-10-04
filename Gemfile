@@ -11,8 +11,8 @@ gem 'dm-postgres-adapter'
 gem 'pg'
 gem 'bcrypt'
 gem 'rake'
-gem 'orderly'
-gem 'json', '~>1.8.6', '<2.0.2'
+gem 'carrierwave-datamapper'
+gem 'mini_magick'
 
 group :test do
   gem 'timecop'
