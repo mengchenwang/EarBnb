@@ -29,3 +29,9 @@
 
   <img src="<%= @property.file.url %>" width="300">
 </div>
+
+<div class="top_right">
+  <form action='/property/<%= @property.id %>/new_comment'>
+    <input type='submit' value='comment'>
+  </form>
+</div>
