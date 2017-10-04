@@ -18,3 +18,5 @@ $ rackup
 ```
 
 ## Authors
+
+Nero, Keith, Marcus, Mengchen
