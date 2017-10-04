@@ -18,10 +18,8 @@ class Property
   include DataMapper::Resource
 
   belongs_to :user
-<<<<<<< HEAD
   has n, :comments
-=======
->>>>>>> c814ffab356582ffb64d8a861b3e331b2034a457
+
 
   property :id,               Serial
   property :description,      Text, required: true, length: 1..300,

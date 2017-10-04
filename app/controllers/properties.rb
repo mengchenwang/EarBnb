@@ -42,16 +42,13 @@ class EarBnb < Sinatra::Base
       flash.now[:errors] = @property.errors.full_messages
       erb :'properties/new'
     end
-<<<<<<< HEAD
     # property = Property.create(
     # :address1 => params[:address1],
     # :price_per_night => params[:price],
     # :description => params[:description]
     # )q
     # session['message'] = params[:address1]
-    # redirect to('/properties')
-=======
->>>>>>> c814ffab356582ffb64d8a861b3e331b2034a457
+
   end
 
   get '/property/:id' do
