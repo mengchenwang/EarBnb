@@ -16,7 +16,7 @@ feature 'Creating properties' do
     expect(current_path).to eq('/properties')
 
     within 'ul' do
-      expect(page).to have_content('New Street')
+      expect(page).to have_content('Test Street')
     end
   end
 
@@ -29,7 +29,7 @@ feature 'Creating properties' do
     expect(page).to have_content('Description must not be empty')
   end
 
-  scenario 'I cannot create a property description longer than 100 chars.' do
+  scenario 'I cannot create a property description longer than 300 chars.' do
     sign_in(email: user.email,   password: user.password)
     visit '/properties/new'
     create_property(description: "Hey" * 101)

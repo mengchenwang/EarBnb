@@ -22,8 +22,9 @@ module SessionHelpers
    click_button 'Sign up'
  end
 
- def create_property(description: "this is an awesome house")
-   fill_in      :address1, with: 'New Street'
+ def create_property(address: "Test Street", description: "this is an awesome house")
+   visit('/properties/new')
+   fill_in      :address1, with: address
    fill_in      :price, with: 10
    select       '3', from: 'bedrooms'
    fill_in      :description, with: description
