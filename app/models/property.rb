@@ -17,7 +17,7 @@ class Property
   property :state,            String
   property :post_code,        String
   property :price_per_night,  Integer
-  property :bedrooms,         Integer
+  property :bedrooms,         String
   property :image_url,        String
   property :created_at,       DateTime
 
