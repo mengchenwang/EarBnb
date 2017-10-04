@@ -7,6 +7,7 @@ class User
   attr_accessor :password_confirmation
 
   has n, :propertys
+  has n, :messages
 
   property :id,         Serial
   property :email,      String, required: true,

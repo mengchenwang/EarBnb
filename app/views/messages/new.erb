@@ -1,0 +1,54 @@
+<style>
+  h1 {
+    text-align:center;
+    margin:30px auto 0 auto;
+    font-size: 40px;
+    font-weight:bold;
+  }
+
+  .box {
+    width:400px;
+    border-radius:5px;
+    padding: 20px 20px 20px 50px;
+    box-shadow: -5px 5px 5px rgba(8,116,171,0.7);
+    margin:20px auto auto auto;
+    display:block;
+    background-color:LightGray;
+  }
+
+  div {
+    padding:5px;
+  }
+
+  label {
+    display:block;
+  }
+
+  textarea {
+    min-height:100px;
+    resize: none;
+  }
+
+  input, textarea {
+    min-width:280px;
+  }
+
+  input[type="submit"] {
+    -webkit-appearance:button;
+    padding:5px;
+  }
+</style>
+
+<h1> Send a message </h1>
+
+<form class="box" action="/property/<%= @property.id %>/submit_message" method="POST" enctype="multipart/form-data">
+
+  <div>
+    <label for="content">Enter your message:</label>
+    <textarea id ="content" name="content"></textarea>
+  </div>
+
+  <div>
+    <input type="submit" value="Send">
+  </div>
+</form>

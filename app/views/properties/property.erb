@@ -27,5 +27,17 @@
   Bedrooms: <%= @property.bedrooms %><br>
   Description: <%= @property.description %><br>
 
-  <img src="<%= @property.file.url %>" width="300">
+  <img src="<%= @property.file.url %>" width="300"><br>
+
+  <form action='/property/<%= @property.id %>/new_message'>
+    <input type='submit' value='Send a message'>
+  </form>
 </div>
+
+<% @property.messages.reverse.each do |message| %>
+  <div class="box">
+    <% sender = message.user %>
+    Message from: <%= sender.first_name %>&nbsp;<%= sender.last_name %><br>
+    <%= message.content %>
+  </div>
+<% end %>
