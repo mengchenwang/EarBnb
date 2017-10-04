@@ -35,6 +35,7 @@ class EarBnb < Sinatra::Base
 
   get '/property/:id' do
     @property = Property.get(params[:id])
+    @user = User.get(@property.user_id)
     erb :'properties/property'
   end
 
@@ -42,12 +43,14 @@ class EarBnb < Sinatra::Base
     erb :'properties/new'
   end
 
-  get '/property/:id' do
-    @property = Property.get(params['id'])
-    # @property.address1
-    # @comments = Comment.all(:property_id => params['id'])
-    erb(:'properties/property')
+  # get '/property/:id' do
+  #   @property = Property.get(params['id'])
+  #   @user = User.get(@property.user_id)
+  #   p
+  #   # @property.address1
+  #   # @comments = Comment.all(:property_id => params['id'])
+  #   #erb :'properties/property'
 
-  end
+  #end
 
 end

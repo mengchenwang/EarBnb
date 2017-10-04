@@ -168,8 +168,6 @@ DEPENDENCIES
   database_cleaner
   dm-postgres-adapter
   mini_magick
-  json (~> 1.8.6, < 2.0.2)
-  orderly
   pg
   rake
   rspec

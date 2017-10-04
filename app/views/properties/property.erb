@@ -21,7 +21,9 @@
 
 <div class="box">
   Property ID: <%= @property.id %><br>
-  Owner: <%= @property.user.first_name %>&nbsp;<%= @property.user.last_name %><br>
+  Owner: <%= #@property.
+  @user.first_name %>&nbsp;<%= #@property.
+  @user.last_name %><br>
   Listed on: <%= @property.format_time %><br>
   Price: From £<%= @property.price %> per night<br>
   Bedrooms: <%= @property.bedrooms %><br>
@@ -29,4 +31,3 @@
 
   <img src="<%= @property.file.url %>" width="300">
 </div>
-

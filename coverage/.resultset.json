@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mengchenwang/projects/EarBnb/spec/features/creating_properties_spec.rb": [
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/creating_properties_spec.rb": [
         1,
         null,
         1,
@@ -48,7 +48,20 @@
         null,
         null
       ],
-      "/Users/mengchenwang/projects/EarBnb/spec/features/sign_in_sign_out_spec.rb": [
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/property_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/sign_in_sign_out_spec.rb": [
         1,
         null,
         1,
@@ -83,7 +96,7 @@
         null,
         null
       ],
-      "/Users/mengchenwang/projects/EarBnb/spec/features/user_signup_spec.rb": [
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/user_signup_spec.rb": [
         1,
         1,
         2,
@@ -131,7 +144,7 @@
         null,
         null
       ],
-      "/Users/mengchenwang/projects/EarBnb/spec/features/viewing_properties_spec.rb": [
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/viewing_properties_spec.rb": [
         1,
         null,
         1,
@@ -173,7 +186,7 @@
         null,
         null
       ],
-      "/Users/mengchenwang/projects/EarBnb/spec/models/user_spec.rb": [
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -196,6 +209,6 @@
         null
       ]
     },
-    "timestamp": 1507059895
+    "timestamp": 1507112763
   }
 }
