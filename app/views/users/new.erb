@@ -1,47 +1,35 @@
-<style>
-  h1 {
-    text-align:center;
-    margin:30px auto 0 auto;
-    font-size: 40px;
-    font-weight:bold;
-  }
-
-  .box {
-    width:400px;
-    border-radius:5px;
-    padding: 10px;
-    box-shadow: -5px 5px 5px rgba(8,116,171,0.7);
-    margin:20px auto auto auto;
-    display:block;
-    background-color:LightGray;
-  }
-</style>
-
-<h1>Sign up to EarBnb</h1>
-
 <div class="box">
-  <form action='/users' method='post'>
-    <label for='name'>
-      First name: <input name='first_name' type='text' value='<%= @user.first_name %>' required>
-    </label>
-    <br>
-    <label for='last_name'>
-      Last name: <input name='last_name' type='text' value='<%= @user.last_name %>' required>
-    </label>
-    <br>
-    <label for='email'>
-      Email: <input name='email' type='text' value='<%= @user.email %>' required>
-    </label>
-    <br>
-    <label for='password'>
-      Password: <input name='password' type='password'>
-    </label>
-    <br>
-    <label for='password_confirmation'>
-      Confirm Password: <input name='password_confirmation' type='password'>
-    </label>
-    <br>
-    <br>
-    <input type='submit' value='Sign up'>
+  <form class="sign_up" action='/users' method='post'>
+    <header>Sign up to EarBnb</header>
+    
+    <div class="input_group">
+      <label for='name'>First name : </label>
+      <input id="name" name='first_name' type='text' value='<%= @user.first_name %>' required placeholder="E.g John">
+    </div>
+
+    <div class="input_group">
+      <label for='last_name'> Last name : </label>
+      <input id="last_name" name='last_name' type='text' value='<%= @user.last_name %>' required placeholder="E.g Tom">
+    </div>
+
+    <div class="input_group">
+      <label for='email'>Email : </label>
+      <input id="email" name='email' type='text' value='<%= @user.email %>' required placeholder="TomJ@gmail.com">
+    </div>
+
+    <div class="input_group">
+      <label for='password'>Password : </label>
+      <input id="password" name='password' type='password'>
+    </div>
+
+    <div class="input_group">
+      <label for='password_confirmation'>Confirm Password : </label>
+      <input id="password_confirmation" name='password_confirmation' type='password'>
+    </div>
+
+    <div class="input_group">
+      <input type='submit' value='Sign up'>
+    </div>
+
   </form>
 </div>
