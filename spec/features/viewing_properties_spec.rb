@@ -1,4 +1,4 @@
-feature 'Viewing peeps' do
+feature 'Viewing propertiees' do
 
   let!(:user) do
     User.create(name: 'Jack Bauer',
@@ -8,33 +8,15 @@ feature 'Viewing peeps' do
                 password_confirmation: 'damn_it!')
   end
 
-  scenario 'I can see existing peeps on the peeps page' do
-    sign_in(last_name: user.last_name,   password: user.password)
-    visit '/peeps/new'
-    fill_in 'peep_text', with: 'Hello World!'
-    click_button 'Peep it!'
+  scenario 'I can see existing properties on the properties page' do
+    sign_in(email: user.email,   password: user.password)
+    visit '/properties/new'
+    create_property
 
-    expect(current_path).to eq('/peeps')
+    expect(current_path).to eq('/properties')
 
-    within 'ul#peeps' do
-      expect(page).to have_content('Hello World!')
-    end
-  end
-
-  scenario 'I can see the time a peep was created' do
-    sign_in(last_name: user.last_name,   password: user.password)
-    Timecop.freeze do
-      visit '/peeps/new'
-      fill_in 'peep_text', with: 'Hello World!'
-      click_button 'Peep it!'
-
-      expect(current_path).to eq('/peeps')
-
-      within 'ul#peeps' do
-        time = Time.now
-        t = "#{time.strftime("%R")} on #{time.strftime("%d/%-m")}"
-        expect(page).to have_content(t)
-      end
+    within 'ul' do
+      expect(page).to have_content('New Street')
     end
   end
 end

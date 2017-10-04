@@ -1,6 +1,6 @@
 module SessionHelpers
 
- def sign_in(email:, password:)
+ def sign_in(email: 'jbauer@ctu.gov', password: 'damn_it!' )
    visit '/sessions/new'
    fill_in :email, with: email
    fill_in :password, with: password
@@ -21,4 +21,14 @@ module SessionHelpers
    fill_in :password_confirmation, with: password_confirmation
    click_button 'Sign up'
  end
+
+ def create_property(description: "this is an awesome house")
+   fill_in      :address1, with: 'New Street'
+   fill_in      :price, with: 10
+   select       '3', from: 'bedrooms'
+   fill_in      :description, with: description
+   #attach_file('1200px-Buckingham_Palace__London_-_April_2009.jpg', 'app/public/property/images/1200px-Buckingham_Palace__London_-_April_2009.jpg')
+   click_button 'Submit'
+ end
+
 end

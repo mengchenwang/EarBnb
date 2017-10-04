@@ -18,13 +18,11 @@
 </style>
 
 <h1> Properties </h1>
-<%= @message %>
 
 <ul>
 <% @properties.each do |property| %>
   <li>
   <% id = property.id
-  # url = property.photo_url
   address1 = property.address1
   %>
   <a href="property/<%= id %>">
