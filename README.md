@@ -7,3 +7,5 @@ A shameless copy of AirBnb for our Makers Academy project.
 
 
 ## Authors
+
+Nero, Keith, Marcus, Mengchen
