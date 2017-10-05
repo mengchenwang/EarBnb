@@ -1,0 +1,35 @@
+.logo{
+  width:100px;
+}
+.top_box {
+    width:100%;
+    border-radius:5px;
+    padding:10px;
+    margin: 5px auto 50px auto;
+    display:block;
+    background-color:rgb(150,150,150);
+    overflow:hidden;
+    text-align:center;
+  }
+
+.top_left {
+  float:left;
+}
+
+.top_right {
+  float:right;
+}
+
+.top_center {
+  display:inline-block;
+  vertical-align:text-bottom;
+}
+
+.top_box input[type='submit']{
+  border:2px solid #555;
+}
+
+
+.top_box input[type='submit']{
+  margin:5px;
+}
