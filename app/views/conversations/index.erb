@@ -1,0 +1,32 @@
+<style>
+  h1 {
+    text-align:center;
+    margin:30px auto 0 auto;
+    font-size: 40px;
+    font-weight:bold;
+  }
+
+  .box {
+    width:600px;
+    border-radius:5px;
+    padding: 10px;
+    box-shadow: -5px 5px 5px rgba(8,116,171,0.7);
+    margin:20px auto auto auto;
+    display:block;
+    background-color:LightGray;
+  }
+</style>
+
+<h1> Conversations </h1>
+
+<ul id='conversations'>
+  <% current_user.conversations.each do |conversation| %>
+    <div class="box">
+      In discussion with: <%= user_name(other_user(conversation)) %><br>
+      Property: <%= conversation.property.address1 %><br>
+      <form action='/conversation/<%= conversation.id %>'>
+        <input type='submit' value='View' class='btn btn-default'>
+      </form>
+    </div>
+  <% end %>
+</ul>

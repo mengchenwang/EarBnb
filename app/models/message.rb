@@ -2,7 +2,7 @@ class Message
   include DataMapper::Resource
 
   belongs_to :user
-  belongs_to :property
+  belongs_to :conversation
 
   property :id,               Serial
   property :content,          Text, required: true, length: 1..300,

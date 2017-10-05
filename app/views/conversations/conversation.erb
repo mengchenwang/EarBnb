@@ -1,0 +1,58 @@
+<style>
+  h1 {
+    text-align:center;
+    margin:30px auto 0 auto;
+    font-size: 40px;
+    font-weight:bold;
+  }
+
+  h2 {
+    text-align:center;
+    margin:10px auto 0 auto;
+    font-size: 20px;
+    font-weight:bold;
+  }
+
+  .box {
+    width:600px;
+    border-radius:5px;
+    padding: 10px;
+    margin:20px auto auto auto;
+    display:block;
+    background-color:LightGray;
+  }
+
+  .inner-box {
+    border-radius:0px;
+    padding: 0px;
+    margin:0 0 0 0;
+    display:block;
+    background-color:SlateGray;
+    color:white;
+  }
+
+  .send {
+    text-align:center;
+    margin:10px auto auto auto;
+    display:block;
+  }
+</style>
+<h1> Conversation with <%= user_name(other_user(@conversation)) %> </h1>
+<h2> Property: <%= @conversation.property.address1 %> </h2>
+
+<div class="send">
+  <form action='/conversation/<%= @conversation.id %>/new_message'>
+    <input type='submit' value='Send a new message' class='btn btn-default'>
+  </form>
+</div>
+
+<% @conversation.messages.reverse.each do |message| %>
+  <div class="box">
+    <% sender = message.user %>
+    <b><%= sender.first_name %>&nbsp;<%= sender.last_name %></b><br>
+    <%= message.format_time %><br>
+    <div class="inner-box">
+      <%= message.content %>
+    </div>
+  </div>
+<% end %>

@@ -5,6 +5,7 @@ require 'dm-postgres-adapter'
 require_relative 'models/property'
 require_relative 'models/user'
 require_relative 'models/message'
+require_relative 'models/conversation'
 
 DataMapper.setup(:default,  ENV['DATABASE_URL'] || "postgres://localhost/earbnb_#{ENV['RACK_ENV']}")
 DataMapper.finalize

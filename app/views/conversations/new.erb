@@ -1,0 +1,32 @@
+<style>
+  h1 {
+    text-align:center;
+    margin:30px auto 0 auto;
+    font-size: 40px;
+    font-weight:bold;
+  }
+
+  .box {
+    width:600px;
+    border-radius:5px;
+    padding: 10px;
+    margin:20px auto auto auto;
+    display:block;
+    background-color:LightGray;
+  }
+</style>
+
+<h1> Contact the owner </h1>
+
+<form class="box" action="/property/<%= @property.id %>/new_conversation" method="POST" enctype="multipart/form-data">
+  Property: <%= @property.address1 %><br>
+  Owner: <%= @property.user.first_name %>&nbsp;<%= @property.user.last_name %><br>
+  <div>
+    <label for="content">Enter your message:</label><br>
+    <textarea id ="content" name="content"></textarea>
+  </div>
+
+  <div>
+    <input type="submit" value="Send">
+  </div>
+</form>
