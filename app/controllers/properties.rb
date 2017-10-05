@@ -32,4 +32,13 @@ class EarBnb < Sinatra::Base
   get '/properties/new' do
     erb :'properties/new'
   end
+
+  post '/delete_property' do
+    property = Property.get(params[:id])
+    messages = property.messages
+    messages.destroy
+    property.destroy
+    current_user.save
+    redirect '/properties'
+  end
 end

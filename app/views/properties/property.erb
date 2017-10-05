@@ -15,6 +15,14 @@
     display:block;
     background-color:LightGray;
   }
+
+input[type=submit]
+{
+  padding:5px;
+  -webkit-appearance:button;
+
+}
+
 </style>
 
 <h1> <%= @property.address1 %> </h1>
@@ -32,6 +40,14 @@
   <form action='/property/<%= @property.id %>/new_message'>
     <input type='submit' value='Send a message'>
   </form>
+
+  <% if current_user && @property.user.id == current_user.id  %>
+    <form class="delete_property" action="/delete_property" method="POST">
+      <input type="hidden" name="id" value="<%= @property.id %>">
+      <input type="submit" value="Delete property">
+    </form>
+  <% end %>
+
 </div>
 
 <% @property.messages.reverse.each do |message| %>

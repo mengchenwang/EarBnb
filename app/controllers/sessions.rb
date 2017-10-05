@@ -17,6 +17,6 @@ class EarBnb < Sinatra::Base
   delete '/sessions' do
     session[:user_id] = nil
     flash.keep[:notice] = 'goodbye!'
-    redirect to '/properties'
+    redirect '/properties'
   end
 end

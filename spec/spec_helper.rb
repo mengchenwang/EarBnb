@@ -14,6 +14,7 @@ require './app/models/property'
 require './app/models/user'
 require './app/app'
 require_relative 'helpers/session'
+require_relative 'helpers/property'
 
 Capybara.app = EarBnb
 
@@ -25,6 +26,7 @@ SimpleCov.start
 RSpec.configure do |config|
 
   config.include SessionHelpers
+  config.include PropertyHelpers
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
