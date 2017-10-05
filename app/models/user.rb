@@ -8,6 +8,7 @@ class User
 
   has n, :propertys
   has n, :messages
+  has n, :conversations, :through => Resource
 
   property :id,         Serial
   property :email,      String, required: true,

@@ -39,9 +39,9 @@
   }
 </style>
 
-<h1> Send a message </h1>
+<h1> Send a message to <%= user_name(other_user(@conversation)) %></h1>
 
-<form class="box" action="/property/<%= @property.id %>/submit_message" method="POST" enctype="multipart/form-data">
+<form class="box" action="/conversation/<%= @conversation.id %>/submit_message" method="POST" enctype="multipart/form-data">
 
   <div>
     <label for="content">Enter your message:</label>

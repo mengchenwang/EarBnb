@@ -11,8 +11,16 @@ class EarBnb < Sinatra::Base
   enable :partial_underscores
 
   helpers do
-   def current_user
-     @current_user ||= User.get(session[:user_id])
-   end
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
+
+    def other_user(conversation)
+      @other_user = ((conversation.conversation_users).map { |x| x.user } - [current_user]).first
+    end
+
+    def user_name(user)
+      "#{user.first_name} #{user.last_name}"
+    end
   end
 end

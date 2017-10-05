@@ -18,7 +18,7 @@ class Property
   include DataMapper::Resource
 
   belongs_to :user
-  has n, :messages
+  has n, :conversations
 
   property :id,               Serial
   property :description,      Text, required: true, length: 1..300,

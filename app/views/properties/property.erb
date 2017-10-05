@@ -37,10 +37,6 @@ input[type=submit]
 
   <img src="<%= @property.file.url %>" width="300"><br>
 
-  <form action='/property/<%= @property.id %>/new_message'>
-    <input type='submit' value='Send a message'>
-  </form>
-
   <% if current_user && @property.user.id == current_user.id  %>
     <form class="delete_property" action="/delete_property" method="POST">
       <input type="hidden" name="id" value="<%= @property.id %>">
@@ -48,12 +44,9 @@ input[type=submit]
     </form>
   <% end %>
 
+  <% if current_user && @property.user.id != current_user.id  %>
+    <form class="contact_owner" action="/property/<%= @property.id %>/contact_form">
+      <input type="submit" value="Contact the owner">
+    </form>
+  <% end %>
 </div>
-
-<% @property.messages.reverse.each do |message| %>
-  <div class="box">
-    <% sender = message.user %>
-    Message from: <%= sender.first_name %>&nbsp;<%= sender.last_name %><br>
-    <%= message.content %>
-  </div>
-<% end %>

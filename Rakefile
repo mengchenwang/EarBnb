@@ -18,6 +18,7 @@ namespace :db do
 
   desc "Destructive upgrade"
   task :auto_migrate do
+    DataMapper::Model.descendants.each { |model| model.send(:assert_valid) }
     DataMapper.auto_migrate!
     puts "Auto-migrate complete (data was lost)"
   end
