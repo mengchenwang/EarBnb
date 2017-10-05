@@ -30,7 +30,11 @@ class EarBnb < Sinatra::Base
   end
 
   get '/properties/new' do
-    erb :'properties/new'
+    if current_user
+      erb :'properties/new'
+    else
+      redirect '/properties'
+    end
   end
 
   post '/delete_property' do
