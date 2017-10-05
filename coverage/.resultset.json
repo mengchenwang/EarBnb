@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/nerosiva/Documents/MakersAcademyProjects/EarBnb/spec/features/clicking_on_properties_spec.rb": [
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/clicking_on_properties_spec.rb": [
         1,
         1,
         2,
@@ -29,7 +29,7 @@
         null,
         null
       ],
-      "/Users/nerosiva/Documents/MakersAcademyProjects/EarBnb/spec/features/creating_properties_spec.rb": [
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/creating_properties_spec.rb": [
         1,
         null,
         1,
@@ -72,7 +72,68 @@
         null,
         null
       ],
-      "/Users/nerosiva/Documents/MakersAcademyProjects/EarBnb/spec/features/sign_in_sign_out_spec.rb": [
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/photo_upload_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/remove_property_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/sign_in_sign_out_spec.rb": [
         1,
         null,
         1,
@@ -107,7 +168,7 @@
         null,
         null
       ],
-      "/Users/nerosiva/Documents/MakersAcademyProjects/EarBnb/spec/features/user_signup_spec.rb": [
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/user_signup_spec.rb": [
         1,
         1,
         2,
@@ -155,7 +216,7 @@
         null,
         null
       ],
-      "/Users/nerosiva/Documents/MakersAcademyProjects/EarBnb/spec/features/viewing_properties_spec.rb": [
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/features/viewing_properties_spec.rb": [
         1,
         null,
         1,
@@ -180,7 +241,7 @@
         null,
         null
       ],
-      "/Users/nerosiva/Documents/MakersAcademyProjects/EarBnb/spec/models/user_spec.rb": [
+      "/Users/marcus/Desktop/Projects/EarBnb/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -203,6 +264,6 @@
         null
       ]
     },
-    "timestamp": 1507203524
+    "timestamp": 1507216504
   }
 }

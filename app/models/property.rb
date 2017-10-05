@@ -30,7 +30,7 @@ class Property
   property :address1,         String
   property :price,            Integer
   property :bedrooms,         Integer
-  mount_uploader :file,      ImageUploader
+  mount_uploader :file,       ImageUploader
 
   def format_time(time = @created_at)
     "#{time.strftime("%R")} on #{time.strftime("%d/%-m")}"
