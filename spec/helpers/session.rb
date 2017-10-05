@@ -21,15 +21,4 @@ module SessionHelpers
    fill_in :password_confirmation, with: password_confirmation
    click_button 'Sign up'
  end
-
- def create_property(address: "Test Street", description: "this is an awesome house")
-   visit('/properties/new')
-   fill_in      :address1, with: address
-   fill_in      :price, with: 10
-   select       '3', from: 'bedrooms'
-   fill_in      :description, with: description
-   #attach_file('1200px-Buckingham_Palace__London_-_April_2009.jpg', 'app/public/property/images/1200px-Buckingham_Palace__London_-_April_2009.jpg')
-   click_button 'Submit'
- end
-
 end

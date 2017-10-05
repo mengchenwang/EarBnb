@@ -6,6 +6,7 @@ module PropertyHelpers
     fill_in      :price, with: 10
     select       '3', from: 'bedrooms'
     fill_in      :description, with: description
+    attach_file('file', '/Users/marcus/downloads/buckhouse.jpg')
     click_button 'Submit'
   end
 end
