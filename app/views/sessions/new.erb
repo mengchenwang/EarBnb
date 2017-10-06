@@ -2,40 +2,33 @@
 .login{
     background-color: LightGray;
     border-radius: 5px;
-    box-shadow: -5px 5px 5px rgba(8,116,171,0.7);
+    box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
     display: block;
     margin: 20px auto auto auto;
     padding: 10px;
     width: 400px;
 }
-
 .login header{
   font-size: 40px;
   font-weight:bold;
   margin:10px auto 20px auto;
   text-align:center;
 }
-
 .login label{
   display:inline-block;
   text-align:right;
   width:130px;
 }
-
-
 .login .input_group{
   margin:5px;
   padding:5px;
 }
-
 .login input[type="text"],
 .login input[type="password"]{
   min-width:180px;
   padding:5px;
 }
-
 .login input[type="submit"]{
-
   -moz-appearance:button;
   -webkit-appearance:button;
   border-radius:5px;
@@ -43,6 +36,7 @@
   margin:auto;
   padding:5px;
   width:100px;
+  border: 2px solid #555;
 }
 .login input[type="submit"]:hover{
   background:#333;
@@ -52,7 +46,9 @@
 </style>
 
 <form class='login' action='/sessions' method='post'>
+
   <header>Please sign in</header>
+
   <div class='form-group'>
     <label for='email'>Email : </label>
     <input id="email" name='email' type='text'>
