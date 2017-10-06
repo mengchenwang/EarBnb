@@ -1,5 +1,4 @@
 class EarBnb < Sinatra::Base
-
   get '/property/:id/contact_form' do
     @property = Property.get(params[:id])
     erb :'conversations/new'

@@ -19,12 +19,11 @@ require_relative 'helpers/property'
 Capybara.app = EarBnb
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-])
+                                                                 SimpleCov::Formatter::Console
+                                                               ])
 SimpleCov.start
 
 RSpec.configure do |config|
-
   config.include SessionHelpers
   config.include PropertyHelpers
 

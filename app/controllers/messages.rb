@@ -1,5 +1,4 @@
 class EarBnb < Sinatra::Base
-
   get '/conversation/:id/new_message' do
     @conversation = Conversation.get(params[:id])
     erb :'messages/new'
