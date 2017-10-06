@@ -43,3 +43,11 @@ body{
 .top_box input[type='submit']{
   margin:5px;
 }
+
+h1 {
+  text-align:center;
+  margin:30px auto 0 auto;
+  font-size: 40px;
+  font-weight:bold;
+  color:white;
+}
