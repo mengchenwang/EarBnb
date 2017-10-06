@@ -1,4 +1,4 @@
-ENV["RACK_ENV"] ||= "development"
+ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/base'
 require 'sinatra/flash'
@@ -6,7 +6,7 @@ require 'sinatra/partial'
 require 'carrierwave/datamapper'
 
 CarrierWave.configure do |config|
-  config.root = File.dirname(__FILE__) + "/public"
+  config.root = File.dirname(__FILE__) + '/public'
 end
 
 require_relative 'data_mapper_setup'
