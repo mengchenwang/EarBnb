@@ -39,8 +39,8 @@ class EarBnb < Sinatra::Base
 
   post '/delete_property' do
     property = Property.get(params[:id])
-    messages = property.messages
-    messages.destroy
+    conversations = property.conversations
+    conversations.destroy
     property.destroy
     current_user.save
     redirect '/properties'
