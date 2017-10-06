@@ -1,5 +1,4 @@
 feature 'Creating properties' do
-
   let!(:user) do
     User.create(first_name: 'Jack Bauer',
                 last_name: 'Jack24',
@@ -32,7 +31,7 @@ feature 'Creating properties' do
   scenario 'I cannot create a property description longer than 300 chars.' do
     sign_in(email: user.email,   password: user.password)
     visit '/properties/new'
-    create_property(description: "Hey" * 101)
+    create_property(description: 'Hey' * 101)
 
     expect { click_button 'Submit' }.to_not change(Property, :count)
     expect(current_path).to eq('/properties')

@@ -6,7 +6,7 @@ feature 'User sign up' do
   end
 
   scenario 'requires a matching confirmation password' do
-      expect { sign_up(password_confirmation: 'wrong') }.not_to change(User, :count)
+    expect { sign_up(password_confirmation: 'wrong') }.not_to change(User, :count)
   end
 
   scenario 'with a password that does not match' do
@@ -22,7 +22,7 @@ feature 'User sign up' do
   end
 
   scenario "I can't sign up with an invalid email address" do
-    expect { sign_up(email: "invalid@email") }.not_to change(User, :count)
+    expect { sign_up(email: 'invalid@email') }.not_to change(User, :count)
   end
 
   scenario 'I cannot sign up with an existing email' do

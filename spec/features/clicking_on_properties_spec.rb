@@ -8,7 +8,6 @@ feature 'Clicking on property' do
   end
 
   scenario 'I can select a property to view after creating an account' do
-
     sign_in(email: user.email, password: user.password)
     create_property
     click_link('proplink')

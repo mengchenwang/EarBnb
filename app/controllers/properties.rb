@@ -13,8 +13,7 @@ class EarBnb < Sinatra::Base
                                            address1: params[:address1],
                                            price: params[:price],
                                            bedrooms: params[:bedrooms],
-                                           file: params[:file]
-                                          )
+                                           file: params[:file])
     if @property.save
       current_user.save
       redirect '/properties'
