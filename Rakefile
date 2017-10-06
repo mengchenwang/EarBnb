@@ -18,7 +18,8 @@ namespace :db do
 
   desc "Destructive upgrade"
   task :auto_migrate do
-    DataMapper::Model.descendants.each { |model| model.send(:assert_valid) }
+    adapter = DataMapper.repository(:default).adapter
+    adapter.execute("DROP TABLE IF EXISTS conversation_users CASCADE;")
     DataMapper.auto_migrate!
     puts "Auto-migrate complete (data was lost)"
   end
