@@ -5,6 +5,13 @@
       margin: auto auto 10px auto;
       display:block;
     }
+    .error_box
+    {
+       padding:10px;
+       border-radius: 10px;
+       background:rgba(242, 222, 222,0.8);
+
+    }
 </style>
 
 <div class="flash_box">
@@ -15,11 +22,13 @@
   <% end %>
 
   <% if flash[:errors] && !flash[:errors].empty? %>
-    Please refer to the following errors below:
-    <ul id='errors'>
-      <% flash[:errors].each do |error| %>
-        <b><%= error %></b>
-      <% end %>
-    </ul>
+    <div class="bg-danger error_box">
+      Please refer to the following errors below:
+      <ul id='errors'>
+        <% flash[:errors].each do |error| %>
+          <b><%= error %></b>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 </div>
