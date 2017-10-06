@@ -10,6 +10,8 @@ require 'rspec'
 require 'database_cleaner'
 require 'timecop'
 
+require './app/models/message'
+require './app/models/conversation'
 require './app/models/property'
 require './app/models/user'
 require './app/app'

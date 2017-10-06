@@ -11,6 +11,6 @@ feature 'upload photos for property' do
     sign_in(email: user.email, password: user.password)
     create_property
     click_link('proplink')
-    expect(page).to have_xpath("//img[contains(@src, 'buckhouse.jpg')]")
+    expect(page).to have_xpath("//img[contains(@src, 'Test Street_1.jpg')]")
   end
 end
