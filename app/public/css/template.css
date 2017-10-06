@@ -1,21 +1,26 @@
+body{
+   background: url('/earbnb/space_lounge(compressed).jpg');
+ }
+
 .logo{
   width:100px;
 }
 .top_box {
-    width:100%;
-    border-radius:5px;
-    padding:10px;
-    margin: 5px auto 50px auto;
-    display:block;
-    /*background-color:rgb(150,150,150);*/
-    background: -webkit-linear-gradient(left,#E13423, #E96A1A); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(left,#E13423, #E96A1A); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(left,#E13423, #E96A1A); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(left,#E13423, #E96A1A); /* Standard syntax (must be last)*/
-    overflow:hidden;
-    text-align:center;
-    color:#fff;
-  }
+  background: -webkit-linear-gradient(left,#E13423 30%, #E96A1A); /* For Safari 5.1 to 6.0 */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#E13423), color-stop(30%,#E13423), color-stop(100%,#E96A1A)); /* Chrome,Safari4+ */
+  background: -o-linear-gradient(left,#E13423 30%, #E96A1A); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left,#E13423 30%, #E96A1A); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(left,#E13423 30%, #E96A1A); /* Standard syntax (must be last)*/
+  border-radius:5px;
+  color:#fff;
+  display:block;
+  margin: 5px auto 50px auto;
+  overflow:hidden;
+  padding:10px;
+  text-align:center;
+  width:100%;
+
+}
 
 .top_left {
   float:left;
