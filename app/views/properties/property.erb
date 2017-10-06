@@ -42,6 +42,10 @@ input[type=submit]
       <input type="hidden" name="id" value="<%= @property.id %>">
       <input type="submit" value="Delete property">
     </form>
+
+    <form class="edit_property" action="/property/<%= @property.id %>/edit_property">
+      <input type="submit" value="Edit property">
+    </form>
   <% end %>
 
   <% if current_user && @property.user.id != current_user.id  %>

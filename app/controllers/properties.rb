@@ -39,10 +39,32 @@ class EarBnb < Sinatra::Base
 
   post '/delete_property' do
     property = Property.get(params[:id])
-    messages = property.messages
-    messages.destroy
+    conversations = property.conversations
+    conversations.destroy
     property.destroy
     current_user.save
     redirect '/properties'
+  end
+
+  get '/property/:id/edit_property' do
+    @property = Property.get(params[:id])
+    erb :'properties/edit_property'
+  end
+
+  post '/property/:id' do
+    @property = Property.get(params[:id])
+    @property.update(description: params[:description],
+                                           address1: params[:address1],
+                                           price: params[:price],
+                                           bedrooms: params[:bedrooms],
+                                           file: params[:file]
+                                          )
+    if @property.save
+      current_user.save
+      redirect "/property/#{params[:id]}"
+    else
+      flash.now[:errors] = @property.errors.full_messages
+      erb :'properties/new'
+    end
   end
 end

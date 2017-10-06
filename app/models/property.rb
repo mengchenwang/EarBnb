@@ -12,6 +12,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   def extension_whitelist
     %w(jpg jpeg png)
   end
+
+  def filename
+    "#{model.id}.#{file.extension}" if original_filename.present?
+  end
 end
 
 class Property
