@@ -16,7 +16,7 @@ class EarBnb < Sinatra::Base
     end
 
     def other_user(conversation)
-      @other_user = ((conversation.conversation_users).map { |x| x.user } - [current_user]).first
+      @other_user = (conversation.conversation_users.map(&:user) - [current_user]).first
     end
 
     def user_name(user)

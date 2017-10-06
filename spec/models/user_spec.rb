@@ -1,5 +1,4 @@
 describe User do
-
   let!(:user) do
     User.create(first_name: 'Jack',
                 last_name: 'Bauer',
@@ -16,5 +15,4 @@ describe User do
   it 'does not authenticate when given an incorrect password' do
     expect(User.authenticate(user.email, 'where_is_the_bomb?')).to be_nil
   end
-
 end

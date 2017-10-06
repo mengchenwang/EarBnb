@@ -1,5 +1,4 @@
 module PropertyHelpers
-
   def create_property(address: 'Test Street', description: 'this is an awesome house')
     visit '/properties/new'
     fill_in      :address1, with: address

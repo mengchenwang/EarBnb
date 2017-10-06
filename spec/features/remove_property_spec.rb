@@ -1,5 +1,4 @@
 feature 'Delete property' do
-
   scenario 'property owner' do
     sign_up
     create_property

@@ -1,5 +1,4 @@
 feature 'User sign in' do
-
   let!(:user) do
     User.create(first_name: 'Jack',
                 last_name: 'Bauer',
@@ -15,7 +14,6 @@ feature 'User sign in' do
 end
 
 feature 'User signs out' do
-
   before(:each) do
     User.create(first_name: 'Jack',
                 last_name: 'Bauer',

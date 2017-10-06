@@ -8,20 +8,20 @@ class User
 
   has n, :propertys
   has n, :messages
-  has n, :conversations, :through => Resource
+  has n, :conversations, through: Resource
 
   property :id,         Serial
   property :email,      String, required: true,
                                 format: :email_address,
                                 unique: true
-  property :first_name,       String, required: true,
+  property :first_name, String, required: true,
                                 messages: {
-                                  presence: "First name must not be blank"
+                                  presence: 'First name must not be blank'
                                 }
-  property :last_name,  String, required: true,
-                                messages: {
-                                  presence: "Last name must not be blank"
-                                }
+  property :last_name, String, required: true,
+                               messages: {
+                                 presence: 'Last name must not be blank'
+                               }
   property :password_digest, Text
 
   validates_confirmation_of :password
@@ -34,11 +34,6 @@ class User
   def self.authenticate(email, password)
     user = first(email: email)
 
-    if user && BCrypt::Password.new(user.password_digest) == password
-      user
-    else
-      nil
-    end
+    user if user && BCrypt::Password.new(user.password_digest) == password
   end
-
 end
