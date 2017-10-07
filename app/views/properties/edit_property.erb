@@ -1,52 +1,97 @@
 <style>
-  .box {
-    width:400px;
-    border-radius:5px;
-    padding: 20px 20px 20px 50px;
-    box-shadow: -5px 5px 5px rgba(8,116,171,0.7);
-    margin:20px auto auto auto;
-    display:block;
-    background-color:LightGray;
-  }
+.box{
+  padding: 20px 20px;
+  margin:auto;
+  display:block;
+}
 
-  div {
-    padding:5px;
-  }
+.edit_prop,
+.back{
+  max-width:600px;
+  width:90%;
+  border-radius:5px;
+  padding:20px;
+  margin:20px auto auto auto;
+  display:block;
+}
 
-  label {
-    display:block;
-  }
+.edit_prop
+{
+  box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
+  background-color:LightGray;
+}
 
-  textarea {
-    min-height:100px;
-    resize: none;
-  }
+.back{
+  position:relative;
+  top:-95px;
+  background:none;
+}
 
-  input, select, textarea {
-    min-width:280px;
-  }
+.form-group{
+  margin:auto;
+  max-width:400px;
+  width:90%;
+  min-width:280px;
+}
 
-  input[type="submit"] {
-    -webkit-appearance:button;
-    padding:5px;
-  }
+.edit_prop label{
+  display:block;
+  font-size:18px;
+  padding: 5px 0;
+  margin-top:10px;
+  margin-bottom:0px;
+}
+
+.edit_prop textarea{
+  min-height:100px;
+  resize: none;
+  overflow-y: scroll;
+}
+
+.edit_prop input,
+.edit_prop select,
+.edit_prop textarea{
+  display:block;
+  padding:6px 10px;
+  width:100%;
+}
+
+.edit_prop select{
+  height:30px;
+}
+
+.edit_prop input[type=file]{
+  margin-bottom:15px;
+}
+
+.edit_prop input[type=submit],
+.back input[type=submit]
+{
+  width:37.5%;
+  border: 2px solid #555;
+}
+
+.back input[type=submit]
+{
+  float:right;
+}
 </style>
 
-<h1> Edit Property: <%= @property.address1 %> </h1>
+<h1> Edit Property : <%= @property.address1 %> </h1>
+<div class="box">
+<form class="edit_prop" action="/property/<%= @property.id %>" method="POST" enctype="multipart/form-data">
 
-<form class="box" action="/property/<%= @property.id %>" method="POST" enctype="multipart/form-data">
-
-  <div>
+  <div class='form-group'>
     <label for="address1">Enter property address:</label>
     <input id="address1" type="text" name="address1" value="<%= @property.address1 %>">
   </div>
 
-  <div>
+  <div class='form-group'>
     <label for="price">Price per day: (£)</label>
     <input id="price" type="number" name="price" value="<%= @property.price %>">
   </div>
 
-  <div>
+  <div class='form-group'>
     <label for="bedrooms">Number of bedrooms:</label>
     <select id="bedrooms" name="bedrooms">
       <% array =(1..10).to_a %>
@@ -60,17 +105,24 @@
     </select>
   </div>
 
-  <div>
+  <div class='form-group'>
     <label for="description">Enter a description for the property:</label>
     <textarea id ="description" name="description"><%= @property.description %></textarea>
   </div>
 
-  <div>
+  <div class='form-group'>
     <label for="file"></label>
     <input type="file" name="file">
   </div>
 
-  <div>
-    <input type="submit" value="Submit">
+  <div class='form-group'>
+    <input type="submit" value="Submit" class="btn btn-default">
   </div>
 </form>
+
+<form  class="back" action="/property/<%= @property.id %>" method="GET">
+  <div class='form-group'>
+    <input type="submit" value="Cancel" class="btn btn-default">
+  </div>
+</form>
+</div>
