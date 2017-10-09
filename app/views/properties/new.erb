@@ -1,125 +1,47 @@
-<style>
-  .box{
-    padding: 20px 20px;
-    margin:auto;
-    display:block;
-  }
-
-  .new_prop,
-  .back{
-    max-width:600px;
-    width:90%;
-    border-radius:5px;
-    padding:20px;
-    margin:20px auto auto auto;
-    display:block;
-  }
-
-  .new_prop
-  {
-    box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
-    background-color:LightGray;
-  }
-
-  .back{
-    position:relative;
-    top:-95px;
-    background:none;
-  }
-
-  .form-group{
-    margin:auto;
-    max-width:400px;
-    width:90%;
-    min-width:280px;
-  }
-
-  .new_prop label{
-    display:block;
-    font-size:18px;
-    padding: 5px 0;
-    margin-top:10px;
-    margin-bottom:0px;
-  }
-
-  .new_prop textarea{
-    min-height:100px;
-    resize: none;
-    overflow-y: scroll;
-  }
-
-  .new_prop input,
-  .new_prop select,
-  .new_prop textarea{
-    display:block;
-    padding:6px 10px;
-    width:100%;
-  }
-
-  .new_prop select{
-    height:30px;
-  }
-
-  .new_prop input[type=file]{
-    margin-bottom:15px;
-  }
-
-  .new_prop input[type=submit],
-  .back input[type=submit]
-  {
-    width:37.5%;
-    border: 2px solid #555;
-  }
-
-
-  .back input[type=submit]
-  {
-    float:right;
-  }
-</style>
-
 <h1> New Property listing </h1>
-<div class="box">
-<form class="new_prop" action="/properties" method="POST" enctype="multipart/form-data">
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 box">
+    <form class="new_prop" action="/properties" method="POST" enctype="multipart/form-data">
 
-  <div class='form-group'>
-    <label for="address1">Enter property address:</label>
-    <input id="address1" type="text" name="address1">
-  </div>
+      <div class='form-group'>
+        <label for="address1">Enter property address:</label>
+        <input id="address1" type="text" name="address1">
+      </div>
 
-  <div class='form-group'>
-    <label for="price">Price per day: (£)</label>
-    <input id="price" type="number" name="price">
-  </div>
+      <div class='form-group'>
+        <label for="price">Price per day: (£)</label>
+        <input id="price" type="number" name="price">
+      </div>
 
-  <div class='form-group'>
-    <label for="bedrooms">Number of bedrooms:</label>
-    <select id="bedrooms" name="bedrooms">
-      <% array =(1..10).to_a %>
-      <% array.map do |x| %>
-        <%= "<option value='#{x}'>#{x}</option>" %>
-      <% end %>
-    </select>
-  </div>
+      <div class='form-group'>
+        <label for="bedrooms">Number of bedrooms:</label>
+        <select id="bedrooms" name="bedrooms">
+          <% array =(1..10).to_a %>
+          <% array.map do |x| %>
+            <%= "<option value='#{x}'>#{x}</option>" %>
+          <% end %>
+        </select>
+      </div>
 
-  <div class='form-group'>
-    <label for="description">Enter a description for the property:</label>
-    <textarea id ="description" name="description"></textarea>
-  </div>
+      <div class='form-group'>
+        <label for="description">Enter a description for the property:</label>
+        <textarea id ="description" name="description"></textarea>
+      </div>
 
-  <div class='form-group'>
-    <label for="file"></label>
-    <input type="file" name="file">
-  </div>
+      <div class='form-group'>
+        <label for="file"></label>
+        <input type="file" name="file">
+      </div>
 
-  <div class='form-group'>
-    <input type="submit" value="Submit" class="btn btn-default">
-  </div>
-</form>
+      <div class='form-group'>
+        <input type="submit" value="Submit" class="btn btn-default">
+      </div>
+    </form>
 
-<form  class="back" action="/properties" method="GET">
-  <div class='form-group'>
-    <input type="submit" value="Cancel" class="btn btn-default">
+    <form  class="back" action="/properties" method="GET">
+      <div class='form-group'>
+        <input type="submit" value="Cancel" class="btn btn-default">
+      </div>
+    </form>
   </div>
-</form>
 </div>

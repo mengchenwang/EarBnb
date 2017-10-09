@@ -14,7 +14,8 @@ feature 'Creating properties' do
 
     expect(current_path).to eq('/properties')
 
-    within 'ul' do
+    # within 'ul' do
+    within(:css, 'section.properties') do
       expect(page).to have_content('Test Street')
     end
   end

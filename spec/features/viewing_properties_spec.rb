@@ -13,7 +13,8 @@ feature 'Viewing propertiees' do
 
     expect(current_path).to eq('/properties')
 
-    within 'ul' do
+    within(:css, 'section.properties') do
+    # within 'ul' do
       expect(page).to have_content('Test Street')
     end
   end

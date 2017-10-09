@@ -1,49 +1,118 @@
 <style>
-  .box {
-    width:600px;
+
+
+
+  /*.box {
+    /*width:600px;*//*
     border-radius:5px;
     padding: 20px;
-    box-shadow: -5px 5px 5px rgba(8,116,171,0.7);
-    margin:20px auto auto auto;
+    box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
+    margin-top:20px;
     display:block;
     background-color:LightGray;
+  }*/
+  .properties
+  {
+    margin-top:20px;
+    margin-bottom:20px;
+    padding:20px 30px;
+    background-color:rgba(211,211,211,0.5);
+    border-radius:20px;
+
+  }
+  .property {
+      border-radius:5px;
+      box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
+      margin-top:20px;
+      display:block;
+      background-color: #fff;
+      padding: 30px;
   }
 
-input[type=submit]
+.edit_property,.delete_property,.back
 {
-  padding:5px;
-  -webkit-appearance:button;
-
+  display:inline-block;
+  margin:10px;
 }
 
+.edit_property .btn,.delete_property .btn,.back .btn
+{
+  padding:10px;
+}
+
+.main_photo
+{
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:10px;
+  padding:5px;
+}
+
+.main_photo img
+{
+  border:double 4px grey;
+  margin: auto;
+  display:block;
+  max-height:300px;
+  max-width: 100%;
+}
+
+.prop_details
+{
+  margin:0 20px;
+}
+
+.edit_property input[type=submit],
+.delete_property input[type=submit],
+.back input[type=submit],
+.contact_owner input[type=submit]
+{
+  border: 2px solid #555;
+}
 </style>
+
+
 
 <h1> <%= @property.address1 %> </h1>
 
-<div class="box">
-  Property ID: <%= @property.id %><br>
-  Owner: <%= @property.user.first_name %>&nbsp;<%= @property.user.last_name %><br>
-  Listed on: <%= @property.format_time %><br>
-  Price: From £<%= @property.price %> per night<br>
-  Bedrooms: <%= @property.bedrooms %><br>
-  Description: <%= @property.description %><br>
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 properties">
+    <article class="property">
+      <figure class="main_photo">
+        <img src="<%= @property.file.url %>">
+      </figure>
+      <div class="prop_details">
+      Description: <%= @property.description %><br>
+      Bedrooms: <%= @property.bedrooms %><br>
+      Price: From £<%= @property.price %> per night<br>
 
-  <img src="<%= @property.file.url %>" width="300"><br>
+      <% if current_user && @property.user.id == current_user.id  %>
+        Property ID: <%= @property.id %><br>
+      <% end %>
+      Owner: <%= @property.user.first_name %>&nbsp;<%= @property.user.last_name %><br>
+      Listed on: <%= @property.format_time %><br>
+        </div>
 
-  <% if current_user && @property.user.id == current_user.id  %>
-    <form class="delete_property" action="/delete_property" method="POST">
-      <input type="hidden" name="id" value="<%= @property.id %>">
-      <input type="submit" value="Delete property">
-    </form>
+      <% if current_user && @property.user.id == current_user.id  %>
+        <form class="edit_property" action="/property/<%= @property.id %>/edit_property">
+          <input type="submit" value="Edit property" class="btn btn-default">
+        </form>
 
-    <form class="edit_property" action="/property/<%= @property.id %>/edit_property">
-      <input type="submit" value="Edit property">
-    </form>
-  <% end %>
+        <form class="delete_property" action="/delete_property" method="POST">
+          <input type="hidden" name="id" value="<%= @property.id %>">
+          <input type="submit" value="Delete property" class="btn btn-default">
+        </form>
+      <% end %>
 
-  <% if current_user && @property.user.id != current_user.id  %>
-    <form class="contact_owner" action="/property/<%= @property.id %>/contact_form">
-      <input type="submit" value="Contact the owner">
-    </form>
-  <% end %>
+      <form  class="back" action="/properties" method="GET">
+        <input type="submit" value="Back" class="btn btn-default">
+      </form>
+
+      <% if current_user && @property.user.id != current_user.id  %>
+        <form class="contact_btn" action="/property/<%= @property.id %>/contact_form">
+          <input type="submit" value="Contact the owner" class="btn btn-default">
+        </form>
+      <% end %>
+    </article>
+  </div>
 </div>

@@ -1,0 +1,93 @@
+.box{
+  padding: 20px;
+  display:block;
+}
+
+.new_prop,
+.edit_prop,
+.contact_owner,
+.back{
+  max-width:600px;
+  width:90%;
+  border-radius:5px;
+  display:block;
+}
+
+.new_prop,
+.edit_prop,
+.contact_owner
+{
+  box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
+  background-color:LightGray;
+  padding:20px;
+  margin:20px auto auto auto;
+}
+
+.back{
+  position:relative;
+  top:-55px;
+  background:none;
+}
+
+.form-group{
+  margin:auto;
+  max-width:400px;
+  width:90%;
+  min-width:280px;
+}
+
+.new_prop label,
+.edit_prop label,
+.contact_owner label{
+  display:block;
+  font-size:18px;
+  padding: 5px 0;
+  margin-top:10px;
+  margin-bottom:0px;
+}
+
+.new_prop textarea,
+.edit_prop textarea,
+.contact_owner textarea{
+  min-height:100px;
+  resize: none;
+  overflow-y: scroll;
+  margin-bottom:10px;
+}
+
+.new_prop input,
+.new_prop select,
+.new_prop textarea,
+.edit_prop input,
+.edit_prop select,
+.edit_prop textarea,
+.contact_owner input,
+.contact_owner textarea{
+  display:block;
+  padding:6px 10px;
+  width:100%;
+}
+
+.new_prop select,
+.edit_prop select{
+  height:30px;
+}
+
+.new_prop input[type=file],
+.edit_prop input[type=file]{
+  margin-bottom:15px;
+}
+
+.new_prop input[type=submit],
+.edit_prop input[type=submit],
+.back input[type=submit],
+.contact_owner input[type=submit]
+{
+  width:37.5%;
+  border: 2px solid #555;
+}
+
+.back input[type=submit]
+{
+  float:right;
+}

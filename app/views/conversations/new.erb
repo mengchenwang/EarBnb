@@ -1,25 +1,22 @@
-<style>
-  .box {
-    width:600px;
-    border-radius:5px;
-    padding: 10px;
-    margin:20px auto auto auto;
-    display:block;
-    background-color:LightGray;
-  }
-</style>
-
 <h1> Contact the owner </h1>
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 box">
+    <form class="contact_owner" action="/property/<%= @property.id %>/new_conversation" method="POST" enctype="multipart/form-data">
+      Property: <%= @property.address1 %><br>
+      Owner: <%= @property.user.first_name %>&nbsp;<%= @property.user.last_name %><br>
+      <div class='form-group'>
+        <label for="content">Enter your message:</label><br>
+        <textarea id ="content" name="content"></textarea>
+      </div>
 
-<form class="box" action="/property/<%= @property.id %>/new_conversation" method="POST" enctype="multipart/form-data">
-  Property: <%= @property.address1 %><br>
-  Owner: <%= @property.user.first_name %>&nbsp;<%= @property.user.last_name %><br>
-  <div>
-    <label for="content">Enter your message:</label><br>
-    <textarea id ="content" name="content"></textarea>
+      <div class='form-group'>
+        <input type="submit" value="Send" class="btn btn-default">
+      </div>
+    </form>
+    <form  class="back" action="/property/<%= @property.id %>" method="GET">
+      <div class='form-group'>
+        <input type="submit" value="Cancel" class="btn btn-default">
+      </div>
+    </form>
   </div>
-
-  <div>
-    <input type="submit" value="Send">
-  </div>
-</form>
+</div>

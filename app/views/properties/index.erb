@@ -1,24 +1,52 @@
 <style>
-  .box {
-    width:600px;
+
+.properties{
+  margin-top:20px;
+  margin-bottom:20px;
+  padding:20px 30px;
+  background-color:rgba(211,211,211,0.5);
+  border-radius:20px;
+
+}
+.property{
     border-radius:5px;
-    padding: 10px;
-    box-shadow: -5px 5px 5px rgba(8,116,171,0.7);
-    margin:20px auto auto auto;
+    box-shadow: -5px 5px 5px rgba(0,0,0,0.5);
+    margin-top:20px;
     display:block;
-    background-color:LightGray;
+}
+
+  #proplink{
+    display:block;
+    padding: 10px;
+    text-align:center;
+    font-weight:bold;
+  }
+  #proplink:hover{
+    text-decoration: none;
+    background-color:#a6a6a6;
+    color:white;
+    text-shadow: 2px 2px #000000;
+  }
+
+  .title{
+    margin:0px;
+    margin-top:10px;
+    font-size: 16px;
   }
 </style>
 
 <h1> Properties </h1>
-
-<ul id='properties'>
-  <% @properties.reverse.each do |property| %>
-    <div class="box">
-      <a id='proplink' href="property/<%= property.id %>">
-        <caption><%= property.address1 %><br></caption>
-        <%= property.bedrooms %> Bedrooms, From <%= property.price %> per night<br>
-      </a>
-    </div>
-  <% end %>
-</ul>
+<div class="row">
+  <section class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 properties">
+  <!-- <ul id='properties'> -->
+    <% @properties.reverse.each do |property| %>
+      <article class="property">
+        <a id='proplink' href="property/<%= property.id %>" class="btn btn-default" >
+          <p class="title"><%= property.address1 %></p>
+          <p><%= property.bedrooms %> Bedrooms, From &#163;<%= property.price %> per night</p>
+        </a>
+      </article>
+    <% end %>
+  <!-- </ul> -->
+  </section>
+</div>

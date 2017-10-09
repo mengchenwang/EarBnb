@@ -1,12 +1,13 @@
-<div class="top_box">
+<header class="row page_header">
   <% if current_user %>
-    <div class="top_left">
-      <a href="/">
+  <div class="col-sm-2 top_left">
+      <a href="/" class="logo_link">
         <img class="logo" src="/earbnb/logo(compressed).jpg" alt="earbnb logo">
       </a>
+      <p> Bnb that are out of this world</p>
     </div>
 
-    <div class="top_center">
+    <div class="col-sm-4 top_center">
       Welcome, <b><%= current_user.first_name %>&nbsp;<%= current_user.last_name %></b>
       <form method='post' action='/sessions'>
         <input type='hidden' name='_method' value='delete'>
@@ -14,7 +15,7 @@
       </form>
     </div>
 
-    <div class="top_right">
+    <div class="col-sm-4 top_right">
       <form action='/conversations'>
         <input type='submit' value='Conversations' class='btn btn-default'>
       </form>
@@ -24,20 +25,20 @@
       </form>
     </div>
   <% else %>
-    <div class="top_left">
+  <div class="col-sm-2 page_header top_left">
       <a href="/">
         <img class="logo" src="/earbnb/logo(compressed).jpg" alt="earbnb logo">
       </a>
     </div>
 
-    <div class="top_center">
+    <div class="col-sm-4 top_center">
       New to EarBnb?
       <form action='/users/new'>
         <input type='submit' value='Sign Up' class='btn btn-default'>
       </form>
     </div>
 
-    <div class="top_right">
+    <div class="col-sm-4 top_right">
       Have an account?
       <form action='/sessions/new'>
         <input type='submit' value='Log in' class='btn btn-default'>

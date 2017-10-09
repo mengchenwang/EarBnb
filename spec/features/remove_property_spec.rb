@@ -7,7 +7,8 @@ feature 'Delete property' do
 
     expect(current_path).to eq('/properties')
 
-    within 'ul#properties' do
+    within(:css, 'section.properties') do
+    # within 'ul#properties' do
       expect('page').to_not have_content('Test Street')
     end
   end
